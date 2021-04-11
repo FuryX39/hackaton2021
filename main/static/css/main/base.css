@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.wrapper {
+	min-height: 100vh;
+}
+
+footer {
+    min-height: 150px;
+}
+
+#contacts {
+    min-width: 20%;
+    height: 300px;
+}
+
+#content {
+    flex: 1 0 auto;
+}
+
+li {
+    list-style-type: none;
+}
