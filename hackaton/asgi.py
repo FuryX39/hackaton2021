@@ -1,5 +1,5 @@
 """
-ASGI config for trashHackaton project.
+ASGI config for hackaton project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'trashHackaton.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hackaton.settings')
 
 application = get_asgi_application()
