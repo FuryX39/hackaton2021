@@ -11,13 +11,15 @@ def postOperations(request):
 
     info = ''
     if request.method == 'POST':
-        form = OperationForm(request.POST)
+        form = request.POST
         if form.is_valid():
-            queryset = User.objects.filter(nfc_code=form.nfc_code)
+            queryset = User.objects.filter(nfc_code=form.get('nfc_code'))
             if queryset:
                 user = queryset.first()
-                Operation.objects.create(user=user, mass=form.mass, trash_type=form.trash_type)
+                Operation.objects.create(user=user, mass=form.get('mass'), trash_type=form.get('trash_type'))
                 info = 'Операция выполнена'
             else:
                 info = 'Ошибка идентификации'
+        else:
+            info = 'Invalid form'
     return render(request, 'postOperations.html', {'info': info})
