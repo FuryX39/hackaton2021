@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Operation, User, Trash
 from django.utils.crypto import get_random_string
@@ -24,4 +25,4 @@ def postOperations(request):
         else:
             info = 'Ошибка идентификации'
 
-    return render(request, 'postOperations.html', {'new_password': new_password, 'info': info})
+    return HttpResponse(info + ' ' + new_password)
