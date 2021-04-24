@@ -20,3 +20,12 @@ class Operation(models.Model):
 
     def __str__(self):
         return f'{self.user} - {self.date_time}'
+
+
+class Trash(models.Model):
+
+    location = models.CharField(max_length=255)
+    password = models.CharField(max_length=64, default='literallyHardPassword')
+
+    def __str__(self):
+        return self.location

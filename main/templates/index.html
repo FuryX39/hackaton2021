@@ -6,27 +6,6 @@
 {% block head %}<link href="{% static 'css/main/style.css' %}" rel="stylesheet">{% endblock %}
 {% block content %}
     <div class="container">
-        {% for item in articles %}
-            {% if item.boolPublic %}
-                <div class="container">
-                    <a href="{{ item.slug }}" class="d-block text-decoration-none text-dark">
-                        <div class="container pb-3">
-                            <div class="container article-small rounded p-3 bg-light">
-                                <p class="text-secondary">{{ item.pubDate }}</p>
-                                <h4 class="text-secondary">{{ item.title }}</h4>
-                                {% if item.subTitle|length > 1 %}
-                                    <h6 class="text-secondary">{{ item.subTitle }}</h6>
-                                {% endif %}
-                                {% if item.text|length > 299 %}
-                                    <p>{{ item.text|truncatechars:300 }}</p>
-                                {% else %}
-                                    <p>{{ item.text }}</p>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            {% endif %}
-        {% endfor %}
+
     </div>
 {% endblock %}

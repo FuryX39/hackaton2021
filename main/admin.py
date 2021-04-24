@@ -3,4 +3,4 @@ from .models import *
 
 admin.site.register(User)
 admin.site.register(Operation)
-
+admin.site.register(Trash)
